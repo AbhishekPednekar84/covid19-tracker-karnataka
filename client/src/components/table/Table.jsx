@@ -5,7 +5,7 @@ import {
   sortbyActive,
   sortbyDeceased,
   sortbyRecovered,
-} from "../charts/helpers/sort";
+} from "./helpers/sort";
 
 // Component import
 import TableHeader from "./TableHeader";

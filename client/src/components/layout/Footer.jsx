@@ -58,13 +58,6 @@ const Footer = () => {
             team for open sourcing the API!
           </h6>
         </div>
-        <div
-          className={"right-align " + (darkMode ? "dark-mode" : "light-mode")}
-        >
-          <a href="!#" className="modal-close waves-effect waves-blue btn-flat">
-            CLOSE
-          </a>
-        </div>
       </div>
     </Fragment>
   );

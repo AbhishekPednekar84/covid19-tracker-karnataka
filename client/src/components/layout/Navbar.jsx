@@ -131,7 +131,7 @@ const Navbar = () => {
             <p className="about-answer">
               <i className="fas fa-pen green-text"></i> All the data is sourced
               from the API open sourced by the{" "}
-              <a href="covid19india.org" target="blank">
+              <a href="https://covid19india.org" target="blank">
                 COVID19INDIA.ORG
               </a>{" "}
               team.
@@ -148,16 +148,6 @@ const Navbar = () => {
               additional data from various sources becomes available.
             </p>
           </div>
-        </div>
-        <div
-          className={"right-align " + (darkMode ? "dark-mode" : "light-mode")}
-        >
-          <a
-            href="!#"
-            className="modal-close waves-effect waves-blue btn-flat center-align"
-          >
-            CLOSE
-          </a>
         </div>
       </div>
     </Fragment>
