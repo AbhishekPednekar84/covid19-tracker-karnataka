@@ -9,7 +9,7 @@ const Footer = () => {
       <div className={darkMode ? "dark-mode" : "light-mode"}>
         <div className="footer-links">
           <a
-            href="https://github.com/AbhishekPednekar84"
+            href="https://github.com/AbhishekPednekar84/covid19-tracker-karnataka"
             target="blank"
             className={
               darkMode
