@@ -20,3 +20,8 @@ The website should be accessible at **http://localhost:3000**.
 
 ### Deployment
 To deploy the application on a virtual private server, refer to the [React deployment](https://www.codedisciples.in/react-deployment.html) article on [Code Disciples](https://codedisciples.in).
+
+---
+
+### Screenshot
+<p align="center"><img src="https://github.com/AbhishekPednekar84/covid19-tracker-karnataka/blob/master/client/src/assets/screenshot.jpg" alt="Home"></p>
