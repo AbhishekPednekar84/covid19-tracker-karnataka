@@ -113,8 +113,8 @@ const Navbar = () => {
           <h4>About this site</h4>
           <div className="qna">
             <p className="about-question">
-              <i className="fas fa-question-circle orange-text"></i> Why did we
-              build this site?
+              <i className="fas fa-question-circle orange-text"></i> Why was
+              this site created?
             </p>
             <p className="about-answer">
               <i className="fas fa-pen green-text"></i> This is an unofficial
@@ -126,7 +126,7 @@ const Navbar = () => {
           <div className="qna">
             <p className="about-question">
               <i className="fas fa-question-circle orange-text"></i> From where
-              do we get all the information?
+              is all the information sourced?
             </p>
             <p className="about-answer">
               <i className="fas fa-pen green-text"></i> All the data is sourced
@@ -143,9 +143,9 @@ const Navbar = () => {
               <i className="fas fa-question-circle orange-text"></i> Is this it?
             </p>
             <p className="about-answer">
-              <i className="fas fa-pen green-text"></i> We certainly hope not
-              🙂! We plan to continue adding more content to the site as
-              additional data from various sources becomes available.
+              <i className="fas fa-pen green-text"></i> Not really 🙂! The plan
+              is to continue adding more content to the site as additional data
+              from various sources becomes available.
             </p>
           </div>
         </div>

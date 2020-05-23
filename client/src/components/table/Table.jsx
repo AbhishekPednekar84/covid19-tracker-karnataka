@@ -108,7 +108,7 @@ const Table = () => {
                 }
                 onClick={handleConfirmedClick}
               >
-                {"  "}
+                {" "}
                 <i
                   className={`fas fa-${sortbyConfirmed[currentSortOrder].class}`}
                 ></i>
@@ -125,7 +125,7 @@ const Table = () => {
                 }
                 onClick={handleActiveClick}
               >
-                {"  "}
+                {" "}
                 <i
                   className={`fas fa-${sortbyActive[currentSortOrder].class}`}
                 ></i>
@@ -142,7 +142,7 @@ const Table = () => {
                 }
                 onClick={handleRecoveredClick}
               >
-                {"  "}
+                {" "}
                 <i
                   className={`fas fa-${sortbyRecovered[currentSortOrder].class}`}
                 ></i>
@@ -159,7 +159,7 @@ const Table = () => {
                 }
                 onClick={handleDeceasedClick}
               >
-                {"  "}
+                {" "}
                 <i
                   className={`fas fa-${sortbyDeceased[currentSortOrder].class}`}
                 ></i>
