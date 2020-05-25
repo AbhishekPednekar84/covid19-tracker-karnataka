@@ -112,15 +112,15 @@ body {
 
 /* Cards */
 
-
-.card-heading h3 {
+.card-heading h3,
+.card-testing-heading h3 {
   margin-top: 0;
   padding: 20px 0;
   text-align: center;
 }
 
 .card-item-container {
-  margin: 30px 30px;
+  margin: 30px 30px 60px 30px;
 }
 
 .card-item-heading {
@@ -174,6 +174,30 @@ body {
 .generated-delta-counts {
   margin-top: 0;
   font-size: 15px;
+}
+
+.total-tests {
+  padding: 20px;
+  border-bottom: 0.5px solid #ff6f00;
+  text-align: center;
+}
+
+.total-negative-tests {
+  padding: 20px;
+  border-bottom: 0.5px solid #e040fb;
+  text-align: center;
+}
+
+.card-testing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 50px;
+}
+
+.card-testing-item-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Table */
@@ -336,6 +360,9 @@ input::placeholder {
 #active,
 #recovered,
 #deceased,
+.card-testing-heading,
+#totalTests,
+#totalNegativeTests,
 .table-header h3,
 .table-header p,
 .table-header form,
@@ -380,6 +407,18 @@ footer,
   animation-delay: 2.1s;
 }
 
+.card-testing-heading {
+  animation-delay: 2.3s;
+}
+
+#totalTests {
+  animation-delay: 2.5s;
+}
+
+#totalNegativeTests {
+  animation-delay: 2.7s;
+}
+
 table {
   animation-delay: 3s;
 }
@@ -421,7 +460,8 @@ footer {
     font-size: 12px;
   }
 
-  .card-grid {
+  .card-grid,
+  .card-testing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;
@@ -432,8 +472,9 @@ footer {
     font-size: 1.2rem;
   }
 
-  .card-item-container {
-    margin: 10vh 5vh;
+  .card-item-container,
+  .card-testing-item-container {
+    margin: 5vh 5vh;
   }
 
   .table-container th {
@@ -468,7 +509,8 @@ footer {
 }
 
 @media (min-width: 901px) and (max-width: 1300px) {
-  .card-grid {
+  .card-grid,
+  .card-testing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 20px;

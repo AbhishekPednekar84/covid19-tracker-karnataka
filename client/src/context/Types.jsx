@@ -6,3 +6,4 @@ export const FILTER_DISTRICTS = "FILTER_DISTRICTS";
 export const CLEAR_FILTER = "CLEAR_FILTER";
 export const TIME_SERIES = "TIME_SERIES";
 export const DARK_MODE = "DARK_MODE";
+export const GET_TESTING_DATA = "GET_TESTING_DATA";

@@ -1,14 +1,14 @@
 import React, { Fragment, useEffect, useContext } from "react";
 import CovidContext from "../../context/covid/covidContext";
 
-
 // Component import
 import Preloader from "../layout/Preloader";
 import CardItem from "./CardItem";
+import CardTestingItem from "./CardTestingItem";
 
 const Cards = () => {
   const covidContext = useContext(CovidContext);
-  const { getLatestUpdate, timestamp, loading, getStateData } = covidContext;
+  const { loading, getStateData } = covidContext;
 
   useEffect(() => {
     getStateData();
@@ -21,10 +21,17 @@ const Cards = () => {
     return (
       <Fragment>
         <div className="card-heading">
-          <h3>Current Counts</h3>
+          <h3>Current Case Counts</h3>
         </div>
         <div className="card-item-container">
           <CardItem />
+        </div>
+
+        <div className="card-testing-heading">
+          <h3>Current Testing Counts</h3>
+        </div>
+        <div className="card-testing-item-container">
+          <CardTestingItem />
         </div>
       </Fragment>
     );

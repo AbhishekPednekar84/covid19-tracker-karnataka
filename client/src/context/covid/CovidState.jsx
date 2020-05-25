@@ -11,6 +11,7 @@ import {
   CLEAR_FILTER,
   TIME_SERIES,
   DARK_MODE,
+  GET_TESTING_DATA,
 } from "../Types";
 import { getInitialMode } from "../../components/pages/Home";
 
@@ -20,9 +21,10 @@ const CovidState = (props) => {
     stateDataFetched: false,
     zoneData: [],
     zoneDataFetched: false,
+    testingData: [],
+    testingDataFetched: false,
     stateTimeSeries: [],
     timeSeriesLoaded: false,
-    componentView: "table",
     timestamp: "",
     filtered: null,
 
@@ -116,6 +118,18 @@ const CovidState = (props) => {
     dispatch({ type: DARK_MODE, payload: mode });
   };
 
+  // Get the testing data
+  const getTestingData = async () => {
+    const res = await axios.get(
+      "https://api.covid19india.org/state_test_data.json"
+    );
+    var karTestData = res.data["states_tested_data"].filter((f) => {
+      return f.state === "Karnataka";
+    });
+
+    dispatch({ type: GET_TESTING_DATA, payload: karTestData });
+  };
+
   // Set the Preloader component
   const setLoading = () => {
     dispatch({ type: SET_LOADING });
@@ -134,11 +148,13 @@ const CovidState = (props) => {
         loading: state.loading,
         filtered: state.filtered,
         darkMode: state.darkMode,
-        componentView: state.componentView,
+        testingData: state.testingData,
+        testingDataFetched: state.testingDataFetched,
         generateTimeSeriesData,
         getStateData,
         getLatestUpdate,
         getZoneData,
+        getTestingData,
         filterDistricts,
         setDarkMode,
         clearFilter,

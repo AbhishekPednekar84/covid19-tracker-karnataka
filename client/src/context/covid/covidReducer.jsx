@@ -7,6 +7,7 @@ import {
   CLEAR_FILTER,
   TIME_SERIES,
   DARK_MODE,
+  GET_TESTING_DATA,
 } from "../Types";
 
 export default (state, action) => {
@@ -41,6 +42,13 @@ export default (state, action) => {
         ...state,
         stateTimeSeries: action.payload,
         timeSeriesLoaded: true,
+        loading: false,
+      };
+    case GET_TESTING_DATA:
+      return {
+        ...state,
+        testingData: action.payload,
+        testingDataFetched: true,
         loading: false,
       };
     case DARK_MODE:
