@@ -1,4 +1,5 @@
 // Returns the name of the month based on the number passed as a param
+// Being used in the testing related cards as well
 const getMonth = (month) => {
   const months = {
     "01": "Jan",

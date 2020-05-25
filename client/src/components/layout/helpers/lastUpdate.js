@@ -8,16 +8,16 @@ function lastUpdate(timestamp) {
 
   var amPm = "";
 
-  if (hour > 0 && hour < 12) {
-    amPm = "AM";
-  } else if (hour > 12) {
+  if (hour > 12) {
     hour = hour - 12;
     amPm = "PM";
-  } else if (hour === 12) {
-    amPm = "PM";
-  } else {
+  } else if (hour < 12 && hour !== "00") {
+    amPm = "AM";
+  } else if (hour === "00") {
     hour = 12;
     amPm = "AM";
+  } else if (hour === "12") {
+    amPm = "PM";
   }
 
   var formattedTime =

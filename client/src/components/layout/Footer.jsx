@@ -9,6 +9,18 @@ const Footer = () => {
       <div className={darkMode ? "dark-mode" : "light-mode"}>
         <div className="footer-links">
           <a
+            href="#credits-modal"
+            className={
+              darkMode
+                ? "btn waves-effect waves-light blue-grey lighten-2 black-text modal-trigger z-depth-3"
+                : "btn waves-effect waves-light black modal-trigger z-depth-3"
+            }
+          >
+            <i className="fas fa-thumbs-up"></i> Credits
+          </a>
+        </div>
+        <div className="footer-links">
+          <a
             href="https://github.com/AbhishekPednekar84/covid19-tracker-karnataka"
             target="blank"
             className={
@@ -18,18 +30,6 @@ const Footer = () => {
             }
           >
             <i className="fab fa-github"></i> Github
-          </a>
-        </div>
-        <div className="footer-links">
-          <a
-            href="#credits-modal"
-            className={
-              darkMode
-                ? "btn waves-effect waves-light blue-grey lighten-2 black-text modal-trigger z-depth-3"
-                : "btn waves-effect waves-light black modal-trigger z-depth-3"
-            }
-          >
-            <i className="fas fa-thumbs-up"></i> Credits
           </a>
         </div>
       </div>

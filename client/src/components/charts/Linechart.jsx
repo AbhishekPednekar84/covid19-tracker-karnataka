@@ -66,7 +66,7 @@ const Linechart = () => {
             allowDuplicatedCategory={false}
           />
           <CartesianGrid strokeDasharray="3 3" />
-          <YAxis type="number" domain={[0, "dataMax + 75"]} />
+          <YAxis type="number" domain={["auto", (dataMax) => dataMax * 3]} />
           <Tooltip />
           <Legend />
           {series.map((s) => (
@@ -81,7 +81,7 @@ const Linechart = () => {
             />
           ))}
         </LineChart>
-      </div>
+      </div>  
     </div>
   );
 };

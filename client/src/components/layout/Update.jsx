@@ -14,9 +14,12 @@ const Update = () => {
   var formattedTime = lastUpdate(timestamp);
   return (
     <div className="update-container">
-      <p className="blue-grey-text lighten-4">
+      <p className="update-para blue-grey-text lighten-4">
         Last updated {formattedTime} IST
-      </p>
+      </p>{" "}
+      <a href="/">
+        <i class="refresh fas fa-2x fa-sync-alt blue-grey-text"></i>
+      </a>
     </div>
   );
 };

@@ -52,6 +52,7 @@ const CardItem = () => {
         <div id="active" className="stat-card active z-depth-3">
           <h3 className="card-item-heading">Active</h3>
           <p className="generated-counts light-blue-text accent-2">
+            {/* Other state data isn't needed for active counts in Karnataka */}
             <CountUp
               start={0}
               end={generatedStateCounts.active - otherStateActive[0].active}
