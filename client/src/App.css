@@ -478,7 +478,7 @@ footer {
   nav .brand-logo {
     left: 45%;
     transform: translateX(-30%);
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .card-grid,
@@ -491,6 +491,10 @@ footer {
 
   .card-item-heading {
     font-size: 1.2rem;
+  }
+
+  .card-testing-item-heading {
+    font-size: 1rem;
   }
 
   .card-item-container,
