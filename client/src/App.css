@@ -110,6 +110,28 @@ body {
   padding: 10px;
 }
 
+.refresh {
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.refresh:hover {
+  animation: spin 1.5s infinite linear;
+}
+
+.update-para {
+  display: inline;
+  vertical-align: middle;
+  padding-right: 10px;
+}
 /* Cards */
 
 .card-heading h3,
@@ -311,7 +333,6 @@ input::placeholder {
 /* Charts */
 .stacked-bar-container {
   margin-left: 0px;
-  padding: 10px;
   font-size: 0.8rem;
 }
 
@@ -384,23 +405,23 @@ footer,
 }
 
 .update-container {
-  animation-delay: 1.4s;
-}
-
-.card-heading {
-  animation-delay: 1.3s;
-}
-
-#confirmed {
-  animation-delay: 1.4s;
-}
-
-#active {
   animation-delay: 1.5s;
 }
 
-#recovered {
+.card-heading {
+  animation-delay: 1.7s;
+}
+
+#confirmed {
   animation-delay: 1.8s;
+}
+
+#active {
+  animation-delay: 1.9s;
+}
+
+#recovered {
+  animation-delay: 2s;
 }
 
 #deceased {
@@ -457,7 +478,7 @@ footer {
   nav .brand-logo {
     left: 45%;
     transform: translateX(-30%);
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .card-grid,

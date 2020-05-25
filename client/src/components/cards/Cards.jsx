@@ -28,7 +28,7 @@ const Cards = () => {
         </div>
 
         <div className="card-testing-heading">
-          <h3>Current Testing Counts</h3>
+          <h3>Testing Counts</h3>
         </div>
         <div className="card-testing-item-container">
           <CardTestingItem />
