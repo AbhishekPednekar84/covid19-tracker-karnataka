@@ -20,22 +20,14 @@ const StackedBar = () => {
 
   const covidContext = useContext(CovidContext);
 
-  const {
-    stateData,
-    stateDataFetched,
-    zoneData,
-    zoneDataFetched,
-    darkMode,
-  } = covidContext;
+  const { stateData, stateDataFetched, darkMode } = covidContext;
 
   /* Merge the two arrays to get the counts and zone into one object for each district.
      Note that the delta object is removed */
-  if (zoneDataFetched && stateDataFetched) {
-    newChartObj = stateData
-      .filter((f) => {
-        return f.district !== "Unknown" && f.district !== "Other State";
-      })
-      .map((item, index) => Object.assign({}, item, zoneData[index]));
+  if (stateDataFetched) {
+    newChartObj = stateData.filter((f) => {
+      return f.district !== "Unknown" && f.district !== "Other State";
+    });
 
     stackedBarConfirmed = [...newChartObj]
       .sort(sortbyConfirmed["down"].fn)

@@ -20,7 +20,6 @@ const Charts = () => {
     <Fragment>
       <StackedBar />
       <Linechart />
-      <Piechart />
     </Fragment>
   );
 };

@@ -273,7 +273,7 @@ td span {
 }
 
 .table-header {
-  margin: 90px auto 30px auto;
+  margin: 90px auto 20px auto;
   width: 70%;
 }
 
@@ -310,6 +310,20 @@ input::placeholder {
 
 .md-sm-screen {
   display: none;
+}
+
+.table-legend {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.table-legend > span {
+  vertical-align: middle;
+}
+
+.separator {
+  font-size: 1.7rem;
+  vertical-align: middle;
 }
 
 /* Footer */
@@ -363,6 +377,7 @@ input::placeholder {
 .line-chart-container {
   font-size: 0.8rem;
   left: 0;
+  padding-bottom: 40px;
 }
 
 /* Animations */
@@ -386,9 +401,8 @@ input::placeholder {
 #totalTests,
 #totalNegativeTests,
 .table-header h3,
-.table-header p,
 .table-header form,
-table,
+.table-legend table,
 #stacked-bar,
 #line-chart,
 #pie-chart,
@@ -449,7 +463,7 @@ table {
   animation-delay: 2.5s;
 }
 
-.table-header p {
+.table-legend {
   animation-delay: 2.8s;
 }
 
