@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import CovidContext from "../../context/covid/covidContext";
 import {
   sortbyConfirmed,
@@ -22,24 +22,15 @@ const Table = () => {
     stateData,
     stateDataFetched,
     getZoneData,
-    zoneData,
-    zoneDataFetched,
     filtered,
     darkMode,
   } = covidContext;
 
-  useEffect(() => {
-    getZoneData();
-    // eslint-disable-next-line
-  }, []);
-
   // Merge the two arrays to get the counts and zone into one object for each district
-  if (zoneDataFetched && stateDataFetched) {
-    newObj = stateData
-      .filter((f) => {
-        return f.district !== "Unknown" && f.district !== "Other State";
-      })
-      .map((item, index) => Object.assign({}, item, zoneData[index]));
+  if (stateDataFetched) {
+    newObj = stateData.filter((f) => {
+      return f.district !== "Unknown" && f.district !== "Other State";
+    });
   }
 
   // Set the sort order to up or down for the button in the table header
@@ -192,7 +183,13 @@ const Table = () => {
             : [...newObj]
           ).map((d, index) => {
             return (
-              <tr key={index} className={"table-row " + d.zone}>
+              <tr
+                key={index}
+                className={
+                  "table-row " +
+                  (d.active > 15 ? "Red" : d.active === 0 ? "Green" : "Orange")
+                }
+              >
                 <td>{d.district}</td>
                 <td>
                   {d.confirmed}{" "}
