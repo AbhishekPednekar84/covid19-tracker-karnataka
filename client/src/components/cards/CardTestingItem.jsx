@@ -30,7 +30,7 @@ const CardTestingItem = () => {
   return (
     <div className="card-testing-grid">
       {/* Total tests */}
-      <div id="totalTests" className="stat-card total-tests z-depth-3">
+      <div id="totalTests" className="stat-card total-tests z-depth-1">
         <h3 className="card-testing-item-heading">Total Tests</h3>
 
         {totalTests && (
@@ -44,7 +44,7 @@ const CardTestingItem = () => {
       {/* Total negative tests */}
       <div
         id="totalNegativeTests"
-        className="stat-card total-negative-tests z-depth-3"
+        className="stat-card total-negative-tests z-depth-1"
       >
         <h3 className="card-testing-item-heading">Negative Tests</h3>
 

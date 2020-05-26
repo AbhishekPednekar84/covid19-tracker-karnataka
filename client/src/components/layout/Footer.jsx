@@ -12,8 +12,8 @@ const Footer = () => {
             href="#credits-modal"
             className={
               darkMode
-                ? "btn waves-effect waves-light blue-grey lighten-2 black-text modal-trigger z-depth-3"
-                : "btn waves-effect waves-light black modal-trigger z-depth-3"
+                ? "btn waves-effect waves-light blue-grey lighten-2 black-text modal-trigger z-depth-1"
+                : "btn waves-effect waves-light black modal-trigger z-depth-1"
             }
           >
             <i className="fas fa-thumbs-up"></i> Credits
@@ -25,8 +25,8 @@ const Footer = () => {
             target="blank"
             className={
               darkMode
-                ? "btn waves-effect waves-light z-depth-3 blue-grey lighten-2 black-text"
-                : "btn waves-effect waves-light z-depth-3 black"
+                ? "btn waves-effect waves-light z-depth-1 blue-grey lighten-2 black-text"
+                : "btn waves-effect waves-light z-depth-1 black"
             }
           >
             <i className="fab fa-github"></i> Github

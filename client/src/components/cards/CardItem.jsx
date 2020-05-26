@@ -19,7 +19,7 @@ const CardItem = () => {
   return (
     <div className="card-grid">
       {/* Confirmed */}
-      <div id="confirmed" className="stat-card confirmed z-depth-3">
+      <div id="confirmed" className="stat-card confirmed z-depth-1">
         <h3 className="card-item-heading">Confirmed</h3>
 
         {generatedStateCounts && (
@@ -49,7 +49,7 @@ const CardItem = () => {
 
       {/* Active */}
       {generatedStateCounts && (
-        <div id="active" className="stat-card active z-depth-3">
+        <div id="active" className="stat-card active z-depth-1">
           <h3 className="card-item-heading">Active</h3>
           <p className="generated-counts light-blue-text accent-2">
             {/* Other state data isn't needed for active counts in Karnataka */}
@@ -63,7 +63,7 @@ const CardItem = () => {
       )}
 
       {/* Recovered */}
-      <div id="recovered" className="stat-card recovered z-depth-3">
+      <div id="recovered" className="stat-card recovered z-depth-1">
         <h3 className="card-item-heading">Recovered</h3>
 
         {generatedStateCounts && (
@@ -92,7 +92,7 @@ const CardItem = () => {
       </div>
 
       {/* Deceased */}
-      <div id="deceased" className="stat-card deceased z-depth-3">
+      <div id="deceased" className="stat-card deceased z-depth-1">
         <h3 className="card-item-heading">Deceased</h3>
 
         {generatedStateCounts && (

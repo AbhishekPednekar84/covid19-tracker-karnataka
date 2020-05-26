@@ -145,7 +145,8 @@ body {
   margin: 30px 30px 60px 30px;
 }
 
-.card-item-heading {
+.card-item-heading,
+.card-testing-item-heading {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 0;
