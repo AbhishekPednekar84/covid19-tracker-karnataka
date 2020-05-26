@@ -3,7 +3,6 @@ import CovidContext from "../../context/covid/covidContext";
 
 // Component imports
 import StackedBar from "./StackedBar";
-import Piechart from "./Piechart";
 import Linechart from "./Linechart";
 
 const Charts = () => {

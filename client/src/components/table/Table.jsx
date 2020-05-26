@@ -18,13 +18,7 @@ const Table = () => {
 
   const covidContext = useContext(CovidContext);
 
-  const {
-    stateData,
-    stateDataFetched,
-    getZoneData,
-    filtered,
-    darkMode,
-  } = covidContext;
+  const { stateData, stateDataFetched, filtered, darkMode } = covidContext;
 
   // Merge the two arrays to get the counts and zone into one object for each district
   if (stateDataFetched) {

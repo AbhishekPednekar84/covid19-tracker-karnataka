@@ -18,7 +18,7 @@ const Update = () => {
         Last updated {formattedTime} IST
       </p>{" "}
       <a href="/">
-        <i class="refresh fas fa-2x fa-sync-alt blue-grey-text"></i>
+        <i className="refresh fas fa-2x fa-sync-alt blue-grey-text"></i>
       </a>
     </div>
   );
