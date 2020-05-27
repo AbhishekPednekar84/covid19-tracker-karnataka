@@ -38,15 +38,15 @@ const TableHeader = () => {
           </div>
         </form>
         <div className="center-align table-legend">
-          <span className="Red">Greater than 15 cases</span>
+          <span className="Red">Greater than 15 active cases</span>
           {"  "}
           <span className="separator">⋅</span>
           {"  "}
-          <span className="Orange">Between 1 and 15 cases</span>
+          <span className="Orange">Between 1 and 15 active cases</span>
           {"  "}
           <span className="separator">⋅</span>
           {"  "}
-          <span className="Green">No cases</span>
+          <span className="Green">No active cases</span>
         </div>
       </div>
     </Fragment>
