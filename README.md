@@ -1,7 +1,5 @@
 # [COVID 19 Dashboard for Karnataka](https://kar.covid19-info.website)
 
-[![buddy pipeline](https://app.buddy.works/abhiap/covid19-tracker-karnataka/pipelines/pipeline/258489/badge.svg?token=738f35b97ec3ce6a9a115c59e582b088fde6fcee2a92780b69cf9e293e60d114 "buddy pipeline")](https://app.buddy.works/abhiap/covid19-tracker-karnataka/pipelines/pipeline/258489)
-
 This repository contains the `React.js` code for the **[https://kar.covid19-info.website](https://kar.covid19-info.website)** site.
 
 ## Creating a local setup
