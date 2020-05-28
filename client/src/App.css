@@ -377,7 +377,15 @@ input::placeholder {
 .line-chart-container {
   font-size: 0.8rem;
   left: 0;
-  padding-bottom: 40px;
+}
+
+.pie-container {
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+svg > g[class^="raphael-group-"] > text {
+  display: none;
 }
 
 /* Animations */
@@ -547,10 +555,20 @@ footer {
     grid-template-columns: 1fr;
     margin: 30px;
   }
+
+  .pie-container {
+    overflow-x: hidden;
+  }
 }
 
-@media (min-width: 901px) and (max-width: 1300px) {
-  .card-grid,
+@media (min-width: 901px) and (max-width: 1450px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 20px;
+    row-gap: 25px;
+  }
+
   .card-testing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -579,5 +597,9 @@ footer {
 
   .md-sm-screen {
     display: none;
+  }
+
+  .pie-container {
+    overflow-x: hidden;
   }
 }

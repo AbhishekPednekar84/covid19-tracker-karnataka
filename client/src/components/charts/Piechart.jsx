@@ -1,65 +1,66 @@
-import React, { useContext, memo } from "react";
-import CovidContext from "../../context/covid/covidContext";
-import { PieChart, Pie, Cell } from "recharts";
+import React, { useContext, useEffect } from "react";
+import FusionCharts from "fusioncharts";
+import charts from "fusioncharts/fusioncharts.charts";
+import ReactFusioncharts from "react-fusioncharts";
 
-const COLORS = ["#ff7043", "#43a047", "#b71c1c"];
+import CovidContext from "../../context/covid/covidContext";
+
+charts(FusionCharts);
 
 const Piechart = () => {
-  var data;
-
   const covidContext = useContext(CovidContext);
-  const { zoneData } = covidContext;
+  const chartColor = ["#3949ab", "#d81b60"];
 
-  data = zoneData.reduce((color, i) => {
-    color[i.zone] = (color[i.zone] || 0) + 1;
-    return color;
-  }, {});
+  const {
+    genderData,
+    genderDataFetched,
+    getGenderData,
+    darkMode,
+  } = covidContext;
 
-  var zoneCounts = [
-    {
-      color: "orange",
-      value: data["Orange"],
+  useEffect(() => {
+    getGenderData();
+    // eslint-disable-next-line
+  }, []);
+
+  if (genderDataFetched) {
+    var data = genderData.map((o, i) => {
+      return {
+        label: o.gender,
+        value: o.percentage,
+        color: chartColor[i],
+      };
+    });
+  }
+
+  const dataSource = {
+    chart: {
+      enablesmartlabels: "1",
+      showlabels: "1",
+      numbersuffix: " %",
+      usedataplotcolorforlabels: "1",
+      plottooltext: "$label, <b>$value</b>%",
+      labelFontSize: "12",
+      theme: "fusion",
+      bgcolor: darkMode ? "#1a1919" : "#ffffff",
     },
-    {
-      color: "green",
-      value: data["Green"],
-    },
-    {
-      color: "red",
-      value: data["Red"],
-    },
-  ];
+    data: data,
+  };
 
   return (
     <div id="pie-chart">
-      <h3 className="pie-header center-align">District counts by zones</h3>
-      <div className="pie-container enter-align">
-        <PieChart width={300} height={200}>
-          <Pie
-            data={zoneCounts}
-            cx={150}
-            cy={150}
-            startAngle={180}
-            endAngle={0}
-            isAnimationActive={false}
-            innerRadius={80}
-            outerRadius={110}
-            fill="#8884d8"
-            paddingAngle={6}
-            dataKey="value"
-            label
-          >
-            {zoneCounts.map((entry, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-              />
-            ))}
-          </Pie>
-        </PieChart>
+      <h3 className="pie-header center-align">Cases by Gender</h3>
+      <div className="pie-container">
+        <ReactFusioncharts
+          type="doughnut3d"
+          width="600"
+          height="300"
+          dataFormat="JSON"
+          dataSource={dataSource}
+        />
       </div>
     </div>
   );
 };
 
-export default memo(Piechart);
+export default Piechart;

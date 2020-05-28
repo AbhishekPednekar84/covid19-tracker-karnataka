@@ -34,7 +34,7 @@ const CardItem = () => {
 
         {generatedDeltaCounts && generatedDeltaCounts.confirmed > 0 ? (
           <p className="generated-delta-counts red-text accent-1">
-            (+
+            (<i className="fas fa-arrow-up"></i>{" "}
             <CountUp
               start={0}
               end={generatedDeltaCounts.confirmed}
@@ -43,7 +43,9 @@ const CardItem = () => {
             )
           </p>
         ) : (
-          <p className="generated-delta-counts red-text accent-1">(+0)</p>
+          <p className="generated-delta-counts red-text accent-1">
+            (<i className="fas fa-arrow-up"></i> 0)
+          </p>
         )}
       </div>
 
@@ -78,7 +80,7 @@ const CardItem = () => {
 
         {generatedDeltaCounts && generatedDeltaCounts.recovered > 0 ? (
           <p className="generated-delta-counts green-text darken-3">
-            (+{" "}
+            (<i className="fas fa-arrow-up"></i>{" "}
             <CountUp
               start={0}
               end={generatedDeltaCounts.recovered}
@@ -87,7 +89,9 @@ const CardItem = () => {
             )
           </p>
         ) : (
-          <p className="generated-delta-counts green-text accent-1">(+0)</p>
+          <p className="generated-delta-counts green-text accent-1">
+            (<i className="fas fa-arrow-up"></i> 0)
+          </p>
         )}
       </div>
 
@@ -107,7 +111,7 @@ const CardItem = () => {
 
         {generatedDeltaCounts && generatedDeltaCounts.deceased > 0 ? (
           <p className="generated-delta-counts blue-grey-text">
-            (+
+            (<i className="fas fa-arrow-up"></i>{" "}
             <CountUp
               start={0}
               end={generatedDeltaCounts.deceased}
@@ -116,7 +120,9 @@ const CardItem = () => {
             )
           </p>
         ) : (
-          <p className="generated-delta-counts blue-grey-text accent-1">(+0)</p>
+          <p className="generated-delta-counts blue-grey-text accent-1">
+            (<i className="fas fa-arrow-up"></i> 0)
+          </p>
         )}
       </div>
     </div>

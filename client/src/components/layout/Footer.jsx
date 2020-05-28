@@ -55,7 +55,11 @@ const Footer = () => {
             <a href="https://www.covid19india.org/" target="blabk">
               COVID19INDIA.ORG
             </a>{" "}
-            team for open sourcing the API!
+            team and the Government of Karnataka's COVID-19{" "}
+            <a href="https://covid19.karnataka.gov.in/" target="blank">
+              website
+            </a>
+            .
           </h6>
         </div>
       </div>

@@ -6,8 +6,8 @@ import {
   GET_STATE_DATA,
   GET_LATEST_TIMESTAMP,
   SET_LOADING,
-  GET_ZONE_INFO,
   FILTER_DISTRICTS,
+  GENDER_DATA,
   CLEAR_FILTER,
   TIME_SERIES,
   DARK_MODE,
@@ -19,10 +19,10 @@ const CovidState = (props) => {
   const initialState = {
     stateData: [],
     stateDataFetched: false,
-    zoneData: [],
-    zoneDataFetched: false,
     testingData: [],
     testingDataFetched: false,
+    genderData: [],
+    genderDataFetched: false,
     stateTimeSeries: [],
     timeSeriesLoaded: false,
     timestamp: "",
@@ -60,32 +60,12 @@ const CovidState = (props) => {
     });
   };
 
-  // Get zone data
-  const getZoneData = async () => {
-    setLoading();
-    const res = await axios.get("https://api.covid19india.org/zones.json");
-
-    var filteredZone = res.data.zones
-      .filter((z) => {
-        return z.state === "Karnataka";
-      })
-      .map((filteredZone) => {
-        return {
-          district: filteredZone.district,
-          zone: filteredZone.zone,
-        };
-      });
-
-    dispatch({ type: GET_ZONE_INFO, payload: filteredZone });
-  };
-
   // Filter districts in table
   const filterDistricts = (text) => {
     const filteredDistrict = state.stateData
       .filter((f) => {
         return f.district !== "Unknown" && f.district !== "Other State";
       })
-      .map((item, index) => Object.assign({}, item, state.zoneData[index]))
       .filter((filteredDistrict) => {
         const regex = new RegExp(text, "gi");
         return filteredDistrict.district.match(regex);
@@ -130,6 +110,12 @@ const CovidState = (props) => {
     dispatch({ type: GET_TESTING_DATA, payload: karTestData });
   };
 
+  // Get the gender data
+  const getGenderData = async () => {
+    const res = await axios.get("https://kar.covid19-info.website/gender.json");
+    dispatch({ type: GENDER_DATA, payload: res.data });
+  };
+
   // Set the Preloader component
   const setLoading = () => {
     dispatch({ type: SET_LOADING });
@@ -140,8 +126,6 @@ const CovidState = (props) => {
       value={{
         stateData: state.stateData,
         stateDataFetched: state.stateDataFetched,
-        zoneData: state.zoneData,
-        zoneDataFetched: state.zoneDataFetched,
         timestamp: state.timestamp,
         stateTimeSeries: state.stateTimeSeries,
         timeSeriesLoaded: state.timeSeriesLoaded,
@@ -150,12 +134,14 @@ const CovidState = (props) => {
         darkMode: state.darkMode,
         testingData: state.testingData,
         testingDataFetched: state.testingDataFetched,
+        genderData: state.genderData,
+        genderDataFetched: state.genderDataFetched,
         generateTimeSeriesData,
         getStateData,
         getLatestUpdate,
-        getZoneData,
         getTestingData,
         filterDistricts,
+        getGenderData,
         setDarkMode,
         clearFilter,
         setLoading,

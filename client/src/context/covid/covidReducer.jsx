@@ -2,8 +2,8 @@ import {
   GET_STATE_DATA,
   GET_LATEST_TIMESTAMP,
   SET_LOADING,
-  GET_ZONE_INFO,
   FILTER_DISTRICTS,
+  GENDER_DATA,
   CLEAR_FILTER,
   TIME_SERIES,
   DARK_MODE,
@@ -25,17 +25,17 @@ export default (state, action) => {
         timestamp: action.payload,
         loading: false,
       };
-    case GET_ZONE_INFO:
-      return {
-        ...state,
-        zoneData: action.payload,
-        zoneDataFetched: true,
-        loading: false,
-      };
     case FILTER_DISTRICTS:
       return {
         ...state,
         filtered: action.payload,
+      };
+    case GENDER_DATA:
+      return {
+        ...state,
+        genderData: action.payload,
+        genderDataFetched: true,
+        loading: false,
       };
     case TIME_SERIES:
       return {
