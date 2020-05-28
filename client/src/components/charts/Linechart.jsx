@@ -35,7 +35,7 @@ const Linechart = () => {
     {
       name: "Confirmed",
       data: timeSeriesLoaded && confirmedSeries,
-      stroke: "#ff8a80",
+      stroke: "#b71c1c",
     },
     {
       name: "Recovered",
@@ -81,7 +81,7 @@ const Linechart = () => {
             />
           ))}
         </LineChart>
-      </div>  
+      </div>
     </div>
   );
 };

@@ -129,12 +129,16 @@ const Navbar = () => {
               is all the information sourced?
             </p>
             <p className="about-answer">
-              <i className="fas fa-pen green-text"></i> All the data is sourced
+              <i className="fas fa-pen green-text"></i> The data is collated
               from the API open sourced by the{" "}
               <a href="https://covid19india.org" target="blank">
                 COVID19INDIA.ORG
               </a>{" "}
-              team.
+              team and the Government of Karnataka's COVID-19{" "}
+              <a href="https://covid19.karnataka.gov.in/" target="blank">
+                website
+              </a>
+              .
             </p>
           </div>
 
