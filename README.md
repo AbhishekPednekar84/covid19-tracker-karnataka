@@ -21,7 +21,9 @@ The website with url **http://localhost:3000** will launch automatically
 The website should be accessible at **http://localhost:3000**.
 
 ### Deployment
-To deploy the application on a virtual private server, refer to the [React deployment](https://www.codedisciples.in/react-deployment.html) article on [Code Disciples](https://codedisciples.in).
+To deploy the application on a virtual private server and create a CI/CD pipeline with Travis CI, refer to the following articles on [Code Disciples](https://codedisciples.in) -
+1. [Deploying a React application on a Linux server](https://codedisciples.in/react-deployment.html)
+2. [Continuous Deployment with Travis CI and DigitalOcean](https://codedisciples.in/travis-digitalocean.html)
 
 ---
 
