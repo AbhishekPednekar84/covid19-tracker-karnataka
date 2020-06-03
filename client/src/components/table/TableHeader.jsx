@@ -15,7 +15,13 @@ const TableHeader = () => {
   }, []);
 
   const handleChange = (e) => {
-    if (text.current.value !== "") {
+    var districtName = text.current.value;
+    districtName = districtName.replace(
+      /[^a-zA-Z]+|[a-zA-Z]+[\\/]+|[^a-zA-Z]+[\\/]+|[\\/]+/g,
+      ""
+    );
+    console.log(districtName);
+    if (districtName !== "") {
       filterDistricts(e.target.value);
     } else {
       clearFilter();
