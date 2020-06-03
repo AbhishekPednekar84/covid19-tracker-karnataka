@@ -12,7 +12,7 @@ import {
 import CovidContext from "../../context/covid/covidContext";
 
 const Linechart = () => {
-  var confirmedSeries, recoveredSeries, deceasedSeries;
+  var confirmedSeries, recoveredSeries, deceasedSeries, maxValue;
   const covidContext = useContext(CovidContext);
 
   const { stateTimeSeries, timeSeriesLoaded } = covidContext;
@@ -49,6 +49,14 @@ const Linechart = () => {
     },
   ];
 
+  // Determine the max value for the Y axis
+  maxValue =
+    timeSeriesLoaded &&
+    confirmedSeries.map((count) => {
+      return parseInt(count.count);
+    });
+  maxValue = timeSeriesLoaded && Math.max(...maxValue);
+
   return (
     <div id="line-chart">
       <h3 className="line-chart-header center-align">
@@ -66,7 +74,7 @@ const Linechart = () => {
             allowDuplicatedCategory={false}
           />
           <CartesianGrid strokeDasharray="3 3" />
-          <YAxis type="number" domain={["auto", (dataMax) => dataMax * 3]} />
+          <YAxis type="number" domain={["auto", maxValue + 10]} />
           <Tooltip />
           <Legend />
           {series.map((s) => (
