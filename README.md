@@ -20,12 +20,12 @@ The website with url **http://localhost:3000** will launch automatically
 
 The website should be accessible at **http://localhost:3000**.
 
-### Deployment
+## Deployment
 To deploy the application on a virtual private server and create a CI/CD pipeline with Travis CI, refer to the following articles on [Code Disciples](https://codedisciples.in) -
 1. [Deploying a React application on a Linux server](https://codedisciples.in/react-deployment.html)
 2. [Continuous Deployment with Travis CI and DigitalOcean](https://codedisciples.in/travis-digitalocean.html)
 
-### Customization
+## Customization
 To customize this site for a different Indian state/UT, refer to the [wiki](https://github.com/AbhishekPednekar84/covid19-tracker-karnataka/wiki/State-based-Customization).
 
 ---
