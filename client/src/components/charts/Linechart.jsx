@@ -12,7 +12,13 @@ import {
 import CovidContext from "../../context/covid/covidContext";
 
 const Linechart = () => {
-  var confirmedSeries, recoveredSeries, deceasedSeries, maxValue;
+  var confirmedSeries,
+    recoveredSeries,
+    deceasedSeries,
+    maxValue,
+    maxValueConfirmed,
+    maxValueRecovered,
+    maxValueDeceased;
   const covidContext = useContext(CovidContext);
 
   const { stateTimeSeries, timeSeriesLoaded } = covidContext;
@@ -50,12 +56,28 @@ const Linechart = () => {
   ];
 
   // Determine the max value for the Y axis
-  maxValue =
+  maxValueConfirmed =
     timeSeriesLoaded &&
     confirmedSeries.map((count) => {
       return parseInt(count.count);
     });
-  maxValue = timeSeriesLoaded && Math.max(...maxValue);
+  maxValueConfirmed = timeSeriesLoaded && Math.max(...maxValueConfirmed);
+
+  maxValueRecovered =
+    timeSeriesLoaded &&
+    recoveredSeries.map((count) => {
+      return parseInt(count.count);
+    });
+  maxValueRecovered = timeSeriesLoaded && Math.max(...maxValueRecovered);
+
+  maxValueDeceased =
+    timeSeriesLoaded &&
+    deceasedSeries.map((count) => {
+      return parseInt(count.count);
+    });
+  maxValueDeceased = timeSeriesLoaded && Math.max(...maxValueDeceased);
+
+  maxValue = Math.max(maxValueConfirmed, maxValueRecovered, maxValueDeceased);
 
   return (
     <div id="line-chart">

@@ -1,6 +1,7 @@
 import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import CovidContext from "../../context/covid/covidContext";
+import { STATE } from "../../config";
 
 const Navbar = () => {
   const covidContext = useContext(CovidContext);
@@ -12,7 +13,7 @@ const Navbar = () => {
       <nav className="nav-extended blue-grey darken-3">
         <div className="nav-wrapper">
           <Link to="/" className="brand-logo left-align">
-            COVID 19 Tracker - Karnataka{" "}
+            COVID 19 Tracker - {STATE}{" "}
           </Link>
           <Link to="/" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
@@ -131,11 +132,15 @@ const Navbar = () => {
             <p className="about-answer">
               <i className="fas fa-pen green-text"></i> The data is collated
               from the API open sourced by the{" "}
-              <a href="https://covid19india.org" target="blank">
+              <a href="https://covid19india.org" target="blank" rel="noopener">
                 COVID19INDIA.ORG
               </a>{" "}
               team and the Government of Karnataka's COVID-19{" "}
-              <a href="https://covid19.karnataka.gov.in/" target="blank">
+              <a
+                href="https://covid19.karnataka.gov.in/"
+                target="blank"
+                rel="noopener"
+              >
                 website
               </a>
               .

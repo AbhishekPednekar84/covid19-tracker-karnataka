@@ -14,6 +14,7 @@ import {
   GET_TESTING_DATA,
 } from "../Types";
 import { getInitialMode } from "../../components/pages/Home";
+import { STATE, STATE_CODE } from "../../config";
 
 const CovidState = (props) => {
   const initialState = {
@@ -43,7 +44,7 @@ const CovidState = (props) => {
     );
 
     const stateCounts = res.data.filter((f) => {
-      return f.state === "Karnataka";
+      return f.state === STATE;
     });
     dispatch({ type: GET_STATE_DATA, payload: stateCounts[0].districtData });
   };
@@ -87,7 +88,7 @@ const CovidState = (props) => {
     );
 
     var timeSeries = res.data["states_daily"].slice(-90).map((o) => {
-      return { date: o["date"], status: o["status"], count: o["ka"] };
+      return { date: o["date"], status: o["status"], count: o[STATE_CODE] };
     });
 
     dispatch({ type: TIME_SERIES, payload: timeSeries });
@@ -104,7 +105,7 @@ const CovidState = (props) => {
       "https://api.covid19india.org/state_test_data.json"
     );
     var karTestData = res.data["states_tested_data"].filter((f) => {
-      return f.state === "Karnataka";
+      return f.state === STATE;
     });
 
     dispatch({ type: GET_TESTING_DATA, payload: karTestData });

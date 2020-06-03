@@ -52,11 +52,19 @@ const Footer = () => {
         <div className="modal-content">
           <h6 className="center-align">
             A special thanks to the{" "}
-            <a href="https://www.covid19india.org/" target="blabk">
+            <a
+              href="https://www.covid19india.org/"
+              target="blank"
+              rel="noopener"
+            >
               COVID19INDIA.ORG
             </a>{" "}
             team and the Government of Karnataka's COVID-19{" "}
-            <a href="https://covid19.karnataka.gov.in/" target="blank">
+            <a
+              href="https://covid19.karnataka.gov.in/"
+              target="blank"
+              rel="noopener"
+            >
               website
             </a>
             .
