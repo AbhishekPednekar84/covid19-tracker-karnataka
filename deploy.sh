@@ -6,7 +6,9 @@ if [ $TRAVIS_BRANCH == 'master' ] ; then
   ssh-add ~/.ssh/id_rsa
 
   rsync -a --exclude={'/node_modules','/src','/public'} client/ travis@165.22.215.143:/home/abhiap/covid19-tracker-karnataka-copy/client
-  rsync -a server/ travis@165.22.215.143:/home/abhiap/test/server
+  rsync -a --exclude={'/node_modules'} server/ travis@165.22.215.143:/home/abhiap/covid19-tracker-karnataka-copy/server
 else
   echo "Not deploying, since the branch isn't master."
 fi
+
+ssh travis@165.22.215.143 'pm2 restart all'
