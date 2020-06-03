@@ -25,6 +25,9 @@ To deploy the application on a virtual private server and create a CI/CD pipelin
 1. [Deploying a React application on a Linux server](https://codedisciples.in/react-deployment.html)
 2. [Continuous Deployment with Travis CI and DigitalOcean](https://codedisciples.in/travis-digitalocean.html)
 
+### Customization
+To customize this site for a different Indian state/UT, refer to the [wiki](https://github.com/AbhishekPednekar84/covid19-tracker-karnataka/wiki/State-based-Customization).
+
 ---
 
 ### Screenshot
