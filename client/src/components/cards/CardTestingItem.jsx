@@ -15,7 +15,7 @@ const CardTestingItem = () => {
   }, []);
 
   if (testingDataFetched) {
-    var lastestTest = testingData.slice(-1)[0];
+    var lastestTest = testingData.slice(-2)[0];
     totalTests = lastestTest.totaltested;
     totalNegativeTests = lastestTest.negative;
 
