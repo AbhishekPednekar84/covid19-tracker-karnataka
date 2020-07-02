@@ -441,7 +441,7 @@ footer,
 }
 
 #active {
-  animation-delay: 2s;
+  animation-delay: 2.1s;
 }
 
 #recovered {
@@ -498,7 +498,7 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 900px) {
+@media (max-width: 850px) {
   nav .brand-logo {
     left: 45%;
     transform: translateX(-30%);
@@ -564,7 +564,7 @@ footer {
   }
 }
 
-@media (min-width: 901px) and (max-width: 1450px) {
+@media (min-width: 851px) and (max-width: 1450px) {
   .card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

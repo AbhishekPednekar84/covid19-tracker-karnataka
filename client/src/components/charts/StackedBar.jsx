@@ -77,7 +77,7 @@ const StackedBar = () => {
     bgcolor: darkMode ? "#1a1919" : "#ffffff",
     baseFont: "archiaregular",
     valueFontColor: "#455a64",
-    labelFontColor: "#455a64",
+    labelFontColor: darkMode ? "#999" : "#455a64",
     valueFontBold: 1,
     baseFontSize: 12,
     showHoverEffect: 1,
@@ -89,6 +89,10 @@ const StackedBar = () => {
     divLineThickness: 1,
     animation: 1,
     use3DLighting: 1,
+    canvasLeftMargin: 0,
+    canvasRightMargin: 0,
+    chartLeftMargin: 0,
+    chartRightMargin: 0,
   };
 
   const confirmedPalette = { paletteColors: "#e84a5f" };
