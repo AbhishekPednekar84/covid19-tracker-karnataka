@@ -20,7 +20,7 @@ const TableHeader = () => {
       /[^a-zA-Z]+|[a-zA-Z]+[\\/]+|[^a-zA-Z]+[\\/]+|[\\/]+/g,
       ""
     );
-    console.log(districtName);
+
     if (districtName !== "") {
       filterDistricts(e.target.value);
     } else {
@@ -44,7 +44,7 @@ const TableHeader = () => {
           </div>
         </form>
         <div className="center-align table-legend">
-          <span className="Red">Greater than 15 active cases</span>
+          <span className="Red">More than 15 active cases</span>
           {"  "}
           <span className="separator">⋅</span>
           {"  "}

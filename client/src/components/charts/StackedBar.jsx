@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+// import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from "recharts";
+import FusionCharts from "fusioncharts";
+import charts from "fusioncharts/fusioncharts.charts";
+import ReactFusioncharts from "react-fusioncharts";
 import {
   sortbyConfirmed,
   sortbyActive,
@@ -8,6 +11,8 @@ import {
 } from "../table/helpers/sort";
 
 import CovidContext from "../../context/covid/covidContext";
+
+charts(FusionCharts);
 
 const StackedBar = () => {
   var newChartObj;
@@ -33,20 +38,83 @@ const StackedBar = () => {
       .sort(sortbyConfirmed["down"].fn)
       .slice(0, 10);
 
+    stackedBarConfirmed = stackedBarConfirmed.map((c) => {
+      return { label: c.district, value: c.confirmed };
+    });
+
     stackedBarActive = [...newChartObj]
       .sort(sortbyActive["down"].fn)
       .slice(0, 10);
+
+    stackedBarActive = stackedBarActive.map((c) => {
+      return { label: c.district, value: c.active };
+    });
 
     stackedBarRecovered = [...newChartObj]
       .sort(sortbyRecovered["down"].fn)
       .slice(0, 10);
 
+    stackedBarRecovered = stackedBarRecovered.map((c) => {
+      return { label: c.district, value: c.recovered };
+    });
+
     stackedBarDeceased = [...newChartObj]
       .sort(sortbyDeceased["down"].fn)
       .slice(0, 10);
+
+    stackedBarDeceased = stackedBarDeceased.map((c) => {
+      return { label: c.district, value: c.deceased };
+    });
   }
 
-  const labelStyle = { fill: "#1a1919", fontWeight: "bold" };
+  const barSettings = {
+    // Set this if you want the dark / light mode to take effect
+    canvasBgAlpha: "0",
+    showLimits: 0,
+    //Background color and alpha
+    showXAxisLabels: 0,
+    plotSpacePercent: 40,
+    bgcolor: darkMode ? "#1a1919" : "#ffffff",
+    baseFont: "archiaregular",
+    valueFontColor: "#455a64",
+    labelFontColor: "#455a64",
+    valueFontBold: 1,
+    baseFontSize: 12,
+    showHoverEffect: 1,
+    barHoverColor: "#f6f578",
+    formatNumberScale: 0,
+    theme: "fusion",
+    numDivLines: 0,
+    divLineDashed: 1,
+    divLineThickness: 1,
+    animation: 1,
+    use3DLighting: 1,
+  };
+
+  const confirmedPalette = { paletteColors: "#e84a5f" };
+  const activePalette = { paletteColors: "#0fabbc" };
+  const recoveredPalette = { paletteColors: "#96bb7c" };
+  const deceasedPalette = { paletteColors: "#ffa931" };
+
+  const dataSourceConfirmed = {
+    chart: { ...barSettings, ...confirmedPalette },
+    data: stackedBarConfirmed,
+  };
+
+  const dataSourceActive = {
+    chart: { ...barSettings, ...activePalette },
+    data: stackedBarActive,
+  };
+
+  const dataSourceRecovered = {
+    chart: { ...barSettings, ...recoveredPalette },
+    data: stackedBarRecovered,
+  };
+
+  const dataSourceDeceased = {
+    chart: { ...barSettings, ...deceasedPalette },
+    data: stackedBarDeceased,
+  };
 
   return (
     <div id="stacked-bar">
@@ -58,138 +126,52 @@ const StackedBar = () => {
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
           <h5 className="center-align">Confirmed cases</h5>
-          <BarChart
-            layout={"vertical"}
-            barGap={3}
-            width={350}
-            height={350}
-            data={stackedBarConfirmed}
-            margin={{
-              top: 20,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="1 1" />
-            <XAxis type={"number"} hide />
-            <YAxis
-              type={"category"}
-              width={100}
-              padding={{ left: 20 }}
-              dataKey="district"
-            />
-            <Tooltip />
-            <Bar
-              dataKey="confirmed"
-              stackId="a"
-              fill="#ff8a80"
-              label={labelStyle}
-              isAnimationActive={false}
-            ></Bar>
-          </BarChart>
+          <ReactFusioncharts
+            type="bar3d"
+            width="320"
+            height="500"
+            dataFormat="JSON"
+            dataSource={dataSourceConfirmed}
+          />
         </div>
 
-        <div className="stacked-bar-container">
+        <div
+          className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
+        >
           <h5 className="center-align">Active cases</h5>
-          <BarChart
-            layout={"vertical"}
-            barGap={3}
-            width={350}
-            height={350}
-            data={stackedBarActive}
-            margin={{
-              top: 20,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="1 1" />
-            <XAxis type={"number"} hide />
-            <YAxis
-              type={"category"}
-              width={100}
-              padding={{ left: 20 }}
-              dataKey="district"
-            />
-            <Tooltip />
-            <Bar
-              dataKey="active"
-              stackId="a"
-              fill="#40c4ff"
-              label={labelStyle}
-              isAnimationActive={false}
-            ></Bar>
-          </BarChart>
+          <ReactFusioncharts
+            type="bar3d"
+            width="400"
+            height="500"
+            dataFormat="JSON"
+            dataSource={dataSourceActive}
+          />
         </div>
 
-        <div className="stacked-bar-container">
+        <div
+          className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
+        >
           <h5 className="center-align">Recoveries</h5>
-          <BarChart
-            layout={"vertical"}
-            barGap={3}
-            width={350}
-            height={350}
-            data={stackedBarRecovered}
-            margin={{
-              top: 20,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="1 1" />
-            <XAxis type={"number"} hide />
-            <YAxis
-              type={"category"}
-              width={100}
-              padding={{ left: 20 }}
-              dataKey="district"
-            />
-            <Tooltip />
-            <Bar
-              dataKey="recovered"
-              stackId="a"
-              fill="#43a047"
-              label={labelStyle}
-              isAnimationActive={false}
-            ></Bar>
-          </BarChart>
+          <ReactFusioncharts
+            type="bar3d"
+            width="400"
+            height="500"
+            dataFormat="JSON"
+            dataSource={dataSourceRecovered}
+          />
         </div>
 
-        <div className="stacked-bar-container">
+        <div
+          className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
+        >
           <h5 className="center-align">Deaths</h5>
-          <BarChart
-            layout={"vertical"}
-            barGap={3}
-            width={350}
-            height={350}
-            data={stackedBarDeceased}
-            margin={{
-              top: 20,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="1 1" />
-            <XAxis type={"number"} hide />
-            <YAxis
-              type={"category"}
-              width={100}
-              padding={{ left: 20 }}
-              dataKey="district"
-            />
-            <Tooltip />
-            <Bar
-              dataKey="deceased"
-              stackId="a"
-              fill="#b0bec5"
-              label={labelStyle}
-              isAnimationActive={false}
-            ></Bar>
-          </BarChart>
+          <ReactFusioncharts
+            type="bar3d"
+            width="400"
+            height="500"
+            dataFormat="JSON"
+            dataSource={dataSourceDeceased}
+          />
         </div>
       </div>
     </div>

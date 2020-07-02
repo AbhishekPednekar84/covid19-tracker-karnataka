@@ -441,15 +441,15 @@ footer,
 }
 
 #active {
-  animation-delay: 1.9s;
-}
-
-#recovered {
   animation-delay: 2s;
 }
 
-#deceased {
+#recovered {
   animation-delay: 2.1s;
+}
+
+#deceased {
+  animation-delay: 2.2s;
 }
 
 .card-testing-heading {
@@ -505,7 +505,13 @@ footer {
     font-size: 12px;
   }
 
-  .card-grid,
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 20px;
+    row-gap: 25px;
+  }
+
   .card-testing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -513,12 +519,9 @@ footer {
     row-gap: 25px;
   }
 
-  .card-item-heading {
-    font-size: 1.2rem;
-  }
-
+  .card-item-heading,
   .card-testing-item-heading {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .card-item-container,
