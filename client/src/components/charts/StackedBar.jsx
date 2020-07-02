@@ -85,14 +85,8 @@ const StackedBar = () => {
     formatNumberScale: 0,
     theme: "fusion",
     numDivLines: 0,
-    divLineDashed: 1,
-    divLineThickness: 1,
     animation: 1,
     use3DLighting: 1,
-    canvasLeftMargin: 0,
-    canvasRightMargin: 0,
-    chartLeftMargin: 0,
-    chartRightMargin: 0,
   };
 
   const confirmedPalette = { paletteColors: "#e84a5f" };
