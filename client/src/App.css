@@ -498,20 +498,14 @@ footer {
 }
 
 /* Media Queries */
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   nav .brand-logo {
     left: 45%;
     transform: translateX(-30%);
     font-size: 12px;
   }
 
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 20px;
-    row-gap: 25px;
-  }
-
+  .card-grid,
   .card-testing-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -564,7 +558,7 @@ footer {
   }
 }
 
-@media (min-width: 851px) and (max-width: 1450px) {
+@media (min-width: 901px) and (max-width: 1450px) {
   .card-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);

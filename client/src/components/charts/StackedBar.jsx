@@ -86,7 +86,7 @@ const StackedBar = () => {
     theme: "fusion",
     numDivLines: 0,
     animation: 1,
-    use3DLighting: 1,
+    // use3DLighting: 1,
   };
 
   const confirmedPalette = { paletteColors: "#e84a5f" };
@@ -123,11 +123,11 @@ const StackedBar = () => {
         <div
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
-          <h5 className="center-align">Confirmed cases</h5>
+          <h4 className="center-align">Confirmed cases</h4>
           <ReactFusioncharts
             type="bar3d"
-            width="320"
-            height="500"
+            width="380"
+            height="450"
             dataFormat="JSON"
             dataSource={dataSourceConfirmed}
           />
@@ -136,11 +136,11 @@ const StackedBar = () => {
         <div
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
-          <h5 className="center-align">Active cases</h5>
+          <h4 className="center-align">Active cases</h4>
           <ReactFusioncharts
             type="bar3d"
-            width="400"
-            height="500"
+            width="380"
+            height="450"
             dataFormat="JSON"
             dataSource={dataSourceActive}
           />
@@ -149,11 +149,11 @@ const StackedBar = () => {
         <div
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
-          <h5 className="center-align">Recoveries</h5>
+          <h4 className="center-align">Recoveries</h4>
           <ReactFusioncharts
             type="bar3d"
-            width="400"
-            height="500"
+            width="380"
+            height="450"
             dataFormat="JSON"
             dataSource={dataSourceRecovered}
           />
@@ -162,11 +162,11 @@ const StackedBar = () => {
         <div
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
-          <h5 className="center-align">Deaths</h5>
+          <h4 className="center-align">Deaths</h4>
           <ReactFusioncharts
             type="bar3d"
-            width="400"
-            height="500"
+            width="380"
+            height="450"
             dataFormat="JSON"
             dataSource={dataSourceDeceased}
           />
