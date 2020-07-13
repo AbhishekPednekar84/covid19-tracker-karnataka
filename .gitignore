@@ -122,4 +122,7 @@ psd
 thumb
 sketch
 
+# Keys
+corona_rsa
+
 # End of https://www.gitignore.io/api/node,react
