@@ -124,5 +124,6 @@ sketch
 
 # Keys
 corona_rsa
+corona_rsa.pub
 
 # End of https://www.gitignore.io/api/node,react
