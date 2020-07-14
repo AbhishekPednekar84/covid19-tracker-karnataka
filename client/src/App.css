@@ -104,6 +104,13 @@ body {
   margin-bottom: 20px;
 }
 
+/* State */
+
+.state-class {
+  margin-top: 0;
+  padding: 30px 0 5px 0;
+}
+
 /* Update */
 .update-container {
   text-align: center;
@@ -400,6 +407,7 @@ svg > g[class^="raphael-group-"] > text {
 
 .nav-wrapper,
 .update-container,
+#state,
 .card-heading,
 #confirmed,
 #active,
@@ -426,6 +434,10 @@ footer,
 
 .nav-wrapper {
   animation-delay: 1.6s;
+}
+
+#state {
+  animation-delay: 1.5s;
 }
 
 .update-container {
@@ -502,7 +514,7 @@ footer {
   nav .brand-logo {
     left: 45%;
     transform: translateX(-30%);
-    font-size: 12px;
+    font-size: 17px;
   }
 
   .card-grid,
@@ -581,7 +593,7 @@ footer {
 
   nav .brand-logo {
     text-align: center;
-    font-size: 15px;
+    font-size: 17px;
   }
 
   table {

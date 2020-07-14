@@ -1,7 +1,6 @@
 import React, { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import CovidContext from "../../context/covid/covidContext";
-import { STATE } from "../../config";
 
 const Navbar = () => {
   const covidContext = useContext(CovidContext);
@@ -13,7 +12,7 @@ const Navbar = () => {
       <nav className="nav-extended blue-grey darken-3">
         <div className="nav-wrapper">
           <Link to="/" className="brand-logo left-align">
-            COVID 19 Tracker - {STATE}{" "}
+            COVID 19 Tracker
           </Link>
           <Link to="/" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
@@ -61,6 +60,19 @@ const Navbar = () => {
                 Myth Busters
               </a>
             </li>
+            {/* Telegram Bot */}
+            <li>
+              <a
+                className="nav-button waves-effect waves-light"
+                target="blank"
+                href="https://t.me/KarCovid19Bot"
+              >
+                <span>
+                  <i class="fab fa-telegram-plane"></i>
+                </span>{" "}
+                Telegram Bot
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -87,6 +99,17 @@ const Navbar = () => {
             Myth Busters
           </a>
         </li>
+        {/* Telegram Bot */}
+        <li>
+          <a
+            className="waves-effect waves-light"
+            target="blank"
+            href="https://t.me/KarCovid19Bot"
+          >
+            Telegram Bot
+          </a>
+        </li>
+        {/* Toggle Mode */}
         <li>
           <button
             className="btn-mode-toggle"
