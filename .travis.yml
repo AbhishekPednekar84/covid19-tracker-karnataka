@@ -4,10 +4,10 @@ node_js:
 addons:
   ssh_known_hosts: 165.22.215.143
 before_install:
-  # - openssl aes-256-cbc -K $encrypted_82a198b60ea6_key -iv $encrypted_82a198b60ea6_iv
-  #   -in corona_rsa.enc -out corona_rsa -d
-  - openssl aes-256-cbc -K $encrypted_c237f75e2b57_key -iv $encrypted_c237f75e2b57_iv
+  - openssl aes-256-cbc -K $encrypted_82a198b60ea6_key -iv $encrypted_82a198b60ea6_iv
     -in corona_rsa.enc -out corona_rsa -d
+  # - openssl aes-256-cbc -K $encrypted_c237f75e2b57_key -iv $encrypted_c237f75e2b57_iv
+  #   -in corona_rsa.enc -out corona_rsa -d
   - chmod 600 corona_rsa
   - mv corona_rsa ~/.ssh/id_rsa
   - cd client
