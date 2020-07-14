@@ -3,6 +3,7 @@ import CovidContext from "../../context/covid/covidContext";
 
 // Component import
 import Navbar from "../layout/Navbar";
+import State from "../layout/State";
 import Update from "../layout/Update";
 import Cards from "../cards/Cards";
 import Table from "../table/Table";
@@ -47,6 +48,7 @@ const Home = () => {
     <Fragment>
       <Navbar />
       <div className={darkMode ? "dark-mode" : "light-mode"}>
+        <State />
         <Update />
         <Cards />
         <Table />
