@@ -86,7 +86,7 @@ const Linechart = () => {
       </h3>
       <div className="line-chart-container">
         <LineChart
-          width={400}
+          width={350}
           height={500}
           margin={{ top: 5, right: 40, bottom: 5, left: -10 }}
         >

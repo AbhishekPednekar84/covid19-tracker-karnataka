@@ -565,8 +565,17 @@ footer {
     margin: 30px;
   }
 
+  .stacked-bar-container {
+    text-align: center;
+    width: 100%;
+  }
+
   .pie-container {
     overflow-x: hidden;
+  }
+
+  .state-class {
+    font-size: 2rem;
   }
 }
 

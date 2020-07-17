@@ -123,10 +123,10 @@ const StackedBar = () => {
         <div
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
-          <h4 className="center-align">Confirmed cases</h4>
+          <h4 className="stacked-bar-sub-header center-align">Confirmed cases</h4>
           <ReactFusioncharts
             type="bar3d"
-            width="380"
+            width="300"
             height="450"
             dataFormat="JSON"
             dataSource={dataSourceConfirmed}
@@ -136,10 +136,10 @@ const StackedBar = () => {
         <div
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
-          <h4 className="center-align">Active cases</h4>
+          <h4 className="stacked-bar-sub-header center-align">Active cases</h4>
           <ReactFusioncharts
             type="bar3d"
-            width="380"
+            width="300"
             height="450"
             dataFormat="JSON"
             dataSource={dataSourceActive}
@@ -149,10 +149,10 @@ const StackedBar = () => {
         <div
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
-          <h4 className="center-align">Recoveries</h4>
+          <h4 className="stacked-bar-sub-header center-align">Recoveries</h4>
           <ReactFusioncharts
             type="bar3d"
-            width="380"
+            width="300"
             height="450"
             dataFormat="JSON"
             dataSource={dataSourceRecovered}
@@ -162,10 +162,10 @@ const StackedBar = () => {
         <div
           className={"stacked-bar-container " + (darkMode ? "#999" : "#455a64")}
         >
-          <h4 className="center-align">Deaths</h4>
+          <h4 className="stacked-bar-sub-header center-align">Deaths</h4>
           <ReactFusioncharts
             type="bar3d"
-            width="380"
+            width="300"
             height="450"
             dataFormat="JSON"
             dataSource={dataSourceDeceased}
