@@ -17,7 +17,7 @@ const CardTestingItem = () => {
   if (testingDataFetched) {
     var lastestTest = testingData.slice(-2)[0];
     totalTests = lastestTest.totaltested;
-    totalNegativeTests = lastestTest.negative;
+    totalNegativeTests = totalTests - lastestTest.positive;
 
     // Since testing data is from a day earlier, displaying the formatted date on the card
     testingAsOfDate = lastestTest.updatedon;
