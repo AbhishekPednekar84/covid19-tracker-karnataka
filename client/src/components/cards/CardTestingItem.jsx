@@ -2,22 +2,33 @@ import React, { useContext, useEffect } from "react";
 import CountUp from "react-countup";
 import getMonth from "../layout/constants/getMonth";
 import CovidContext from "../../context/covid/covidContext";
+import { generateCounts } from "./helpers/generateCounts";
 
 const CardTestingItem = () => {
   var totalTests, totalNegativeTests, testingAsOfDate;
   const covidContext = useContext(CovidContext);
 
-  const { getTestingData, testingData, testingDataFetched } = covidContext;
+  const {
+    getTestingData,
+    testingData,
+    testingDataFetched,
+    stateData,
+    stateDataFetched,
+  } = covidContext;
 
   useEffect(() => {
     getTestingData();
     //eslint-disable-next-line
   }, []);
 
+  if (stateDataFetched) {
+    var generatedStateCounts = generateCounts(stateData);
+  }
+
   if (testingDataFetched) {
-    var lastestTest = testingData.slice(-2)[0];
+    var lastestTest = testingData.slice(-1)[0];
     totalTests = lastestTest.totaltested;
-    totalNegativeTests = totalTests - lastestTest.positive;
+    totalNegativeTests = totalTests - generatedStateCounts.confirmed;
 
     // Since testing data is from a day earlier, displaying the formatted date on the card
     testingAsOfDate = lastestTest.updatedon;
