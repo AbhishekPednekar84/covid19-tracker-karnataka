@@ -4,7 +4,6 @@ import CovidContext from "../../context/covid/covidContext";
 // Component imports
 import StackedBar from "./StackedBar";
 import Linechart from "./Linechart";
-import Piechart from "./Piechart";
 
 const Charts = () => {
   const covidContext = useContext(CovidContext);
@@ -20,7 +19,6 @@ const Charts = () => {
     <Fragment>
       <StackedBar />
       <Linechart />
-      <Piechart />
     </Fragment>
   );
 };
