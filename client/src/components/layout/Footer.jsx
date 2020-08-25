@@ -59,15 +59,7 @@ const Footer = () => {
             >
               COVID19INDIA.ORG
             </a>{" "}
-            team and the Government of Karnataka's COVID-19{" "}
-            <a
-              href="https://covid19.karnataka.gov.in/"
-              target="blank"
-              rel="noopener"
-            >
-              website
-            </a>
-            .
+            team.
           </h6>
         </div>
       </div>

@@ -5,7 +5,7 @@ import CovidContext from "../../context/covid/covidContext";
 import { generateCounts } from "./helpers/generateCounts";
 
 const CardTestingItem = () => {
-  var totalTests, totalNegativeTests, testingAsOfDate;
+  var totalTests, totalNegativeTests, testingAsOfDate, generatedStateCounts;
   const covidContext = useContext(CovidContext);
 
   const {
@@ -22,7 +22,7 @@ const CardTestingItem = () => {
   }, []);
 
   if (stateDataFetched) {
-    var generatedStateCounts = generateCounts(stateData);
+    generatedStateCounts = generateCounts(stateData);
   }
 
   if (testingDataFetched) {
