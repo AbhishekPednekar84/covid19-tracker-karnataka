@@ -55,6 +55,8 @@ const Linechart = () => {
     },
   ];
 
+  console.log(confirmedSeries);
+
   // Determine the max value for the Y axis
   maxValueConfirmed =
     timeSeriesLoaded &&
@@ -96,7 +98,7 @@ const Linechart = () => {
             allowDuplicatedCategory={false}
           />
           <CartesianGrid strokeDasharray="3 3" />
-          <YAxis type="number" domain={["auto", maxValue + 10]} />
+          <YAxis type="number" domain={[0, maxValue + 100]} />
           <Tooltip />
           <Legend />
           {series.map((s) => (

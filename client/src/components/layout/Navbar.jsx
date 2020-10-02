@@ -68,7 +68,7 @@ const Navbar = () => {
                 href="https://t.me/KarCovid19Bot"
               >
                 <span>
-                  <i class="fab fa-telegram-plane"></i>
+                  <i className="fab fa-telegram-plane"></i>
                 </span>{" "}
                 Telegram Bot
               </a>
