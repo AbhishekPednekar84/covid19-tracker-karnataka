@@ -55,8 +55,6 @@ const Linechart = () => {
     },
   ];
 
-  console.log(confirmedSeries);
-
   // Determine the max value for the Y axis
   maxValueConfirmed =
     timeSeriesLoaded &&
