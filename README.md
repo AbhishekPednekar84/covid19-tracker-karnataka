@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/AbhishekPednekar84/covid19-tracker-karnataka.svg?branch=master)](https://travis-ci.org/AbhishekPednekar84/covid19-tracker-karnataka)
 
-This repository contains the `React.js` code for the **[https://kar.corona-tracker.co.in](https://kar.covid19-info.website)** site.
+This repository contains the `React.js` code for the **[https://kar.corona-tracker.co.in](https://kar.corona-tracker.co.in)** site.
 
 ## Creating a local setup
 ### Frontend
